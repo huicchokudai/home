@@ -238,3 +238,73 @@ footer {
         font-size: 1.6em;
     }
 }
+
+/* ==========================
+   News Layout
+========================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.news-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+}
+
+.news-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.news-info {
+    padding: 15px;
+}
+
+.news-info h3 {
+    margin: 0 0 5px;
+    font-size: 1.1em;
+}
+
+.news-info a {
+    text-decoration: none;
+    color: #0f2a44;
+}
+
+.news-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Posters on full news page */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.poster-grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.poster-grid figcaption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
