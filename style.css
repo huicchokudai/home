@@ -124,27 +124,62 @@ footer {
 }
 
 
-/* Overlay for readability */
-.slide::before {
+/* ==========================
+   Hero Image Slider (Final)
+========================== */
+
+.slider {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 1.6s ease-in-out; /* NORMAL speed */
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Image handling */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* full slider, natural scale */
+    object-position: center;
+}
+
+/* Dark overlay */
+.slide::after {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
 }
 
+/* Text content */
 .slide-content {
-    position: relative;
+    position: absolute;
+    z-index: 2;
     color: #ffffff;
     text-align: center;
     max-width: 900px;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
     padding: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .slide-content h2 {
-    font-size: 2.1em;
+    font-size: 2.2em;
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -162,5 +197,9 @@ footer {
 
     .slide-content h2 {
         font-size: 1.6em;
+    }
+
+    .slide-content p {
+        font-size: 1em;
     }
 }
