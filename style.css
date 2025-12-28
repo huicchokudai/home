@@ -104,6 +104,17 @@ section h2 {
     padding-bottom: 5px;
 }
 
+/* Links inside sections (Contact, etc.) */
+section a {
+    color: #0f2a44;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
 /* Lists */
 ul {
     padding-left: 20px;
