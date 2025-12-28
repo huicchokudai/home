@@ -42,7 +42,7 @@ body {
     white-space: nowrap;
     margin: 0;
     color: #ffffff;
-    font-size: 2em;
+    font-size: clamp(1.4rem, 2.2vw, 2.1rem);
 }
 
 .subtitle {
