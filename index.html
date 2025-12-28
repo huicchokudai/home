@@ -20,24 +20,21 @@
 <section class="slider">
     <div class="slides">
 
-        <div class="slide">
-            <img src="images/slider1.png" alt="HUICC Activities">
+        <div class="slide active" style="background-image: url('images/slider1.png');">
             <div class="slide-content">
                 <h2></h2>
                 <p></p>
             </div>
         </div>
 
-        <div class="slide">
-            <img src="images/slider2.png" alt="Intercultural Dialogue">
+        <div class="slide" style="background-image: url('images/slider2.png');">
             <div class="slide-content">
                 <h2></h2>
                 <p></p>
             </div>
         </div>
 
-        <div class="slide">
-            <img src="images/slider3.png" alt="Student Community">
+        <div class="slide" style="background-image: url('images/slider3.png');">
             <div class="slide-content">
                 <h2></h2>
                 <p></p>
@@ -116,18 +113,24 @@
 </footer>
 
 <script>
-    const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
-    const slideInterval = 7000; // 7 seconds (NORMAL, calm)
 
-    function moveSlider() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        slidesContainer.style.transform =
-            `translateX(-${currentIndex * 100}%)`;
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
     }
 
-    setInterval(moveSlider, slideInterval);
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Initial slide
+    showSlide(currentIndex);
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
 </script>
 
 </body>
